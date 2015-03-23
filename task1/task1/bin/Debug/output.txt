@@ -1,0 +1,10 @@
+Input from: 
+0
+Input to: 
+1000
+Input eps: 
+1E-07
+DichotomyMinX: 1.76833917335555 (34 iterations)
+DichotomyMinValue: 24.9150527551796
+GoldenSectionMinX: 1.76833920496875 (48 iterations)
+GoldenSectionMinValue: 24.9150527551796
