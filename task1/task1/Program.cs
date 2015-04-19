@@ -18,13 +18,14 @@ namespace task1
 
         
 
-        static double dichotomyMinX(double from, double to, double eps)
+        static double dichotomyMinX(double from, double to, double eps, double delta)
         {
-            double delta = eps / 10;
+            LogBoth(String.Format("DICHOTOMY START: EPS: {0}, DELTA: {1})", eps, delta));            
             double x1, x2;
             dichotomyIterations = 0;
             while (Math.Abs(to - from) > eps && Math.Abs(to - from) >= 2 * delta)
             {
+               
                 x1 = (to + from) / 2 - delta;
                 x2 = (to + from) / 2 + delta;
                 if (f(x1) > f(x2)) {
@@ -34,14 +35,18 @@ namespace task1
                 }
 
                 dichotomyIterations++;
+
+                LogBoth(String.Format("iteration {0}: x1={1}; x2={2}; from={3}; to={4}; middle={5}; val={6}",
+                                        dichotomyIterations, x1, x2, from, to, (from + to) / 2, f((from + to) / 2))); 
             }
 
             return (from + to) / 2;
         }
 
         static double goldenSectionMinX(double from, double to, double eps) {
-            double x1, x2;
+            LogBoth(String.Format("GOLDEN_SECTION START: EPS: {0})", eps)); 
 
+            double x1, x2;
             goldenSectionIterations = 0;
             while (Math.Abs(to - from) > eps) { 
                 x1 = to - (to-from)/phi;
@@ -53,6 +58,9 @@ namespace task1
                 }
 
                 goldenSectionIterations++;
+
+                LogBoth(String.Format("iteration {0}: x1={1}; x2={2}; from={3}; to={4}; middle={5}; val={6}",
+                                        goldenSectionIterations, x1, x2, from, to, (from + to) / 2, f((from + to) / 2))); 
             }
 
             return (to + from) / 2;
@@ -65,7 +73,7 @@ namespace task1
             
             bool flag = true;
             while (flag) {
-                double from, to, eps;
+                double from, to, eps, delta;
 
                 LogBoth("Input from: ");
                 if (!double.TryParse(Console.ReadLine(), out from))
@@ -92,10 +100,21 @@ namespace task1
                     LogFile(eps.ToString());
                 }
 
+                LogBoth("Input delta: ");
+                if (!double.TryParse(Console.ReadLine(), out delta))
+                {
+                    Console.WriteLine("Wrong input");
+                    continue;
+                }
+                else
+                {
+                    LogFile(delta.ToString());
+                }
 
 
-                LogBoth(String.Format("DichotomyMinX: {0} ({1} iterations)", dichotomyMinX(from, to, eps), dichotomyIterations));
-                LogBoth(String.Format("DichotomyMinValue: {0}", f(dichotomyMinX(from, to, eps))));
+                LogBoth("\nRUN:\n");
+                LogBoth(String.Format("DichotomyMinX: {0} ({1} iterations)", dichotomyMinX(from, to, eps, delta), dichotomyIterations));
+                LogBoth(String.Format("DichotomyMinValue: {0}", f(dichotomyMinX(from, to, eps, delta))));
 
                 LogBoth(String.Format("GoldenSectionMinX: {0} ({1} iterations)", goldenSectionMinX(from, to, eps), goldenSectionIterations));
                 LogBoth(String.Format("GoldenSectionMinValue: {0}", f(goldenSectionMinX(from, to, eps))));
