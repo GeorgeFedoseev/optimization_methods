@@ -174,13 +174,7 @@ namespace task2_downhill_simplex // Метод деформированного 
 
                 points = new vec2[]{x_h, x_g, x_l};
 
-            }
-            
-
-
-            
-
-            return new vec2();
+            }           
         }
 
         static void Main(string[] args)
