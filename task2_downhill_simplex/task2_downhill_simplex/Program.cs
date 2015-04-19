@@ -82,9 +82,9 @@ namespace task2_downhill_simplex // Метод деформированного 
                 var f_g = f(x_g);
                 var f_l = f(x_l);
 
-                Console.WriteLine("high: f({0}, {1}) = {2} ", x_h.x, x_h.y, f_h);
-                Console.WriteLine("middle: f({0}, {1}) = {2} ", x_g.x, x_g.y, f_g);
-                Console.WriteLine("low: f({0}, {1}) = {2} \n\n", x_l.x, x_l.y, f_l);
+                LogBoth(String.Format("high: f({0}, {1}) = {2} ", x_h.x, x_h.y, f_h));
+                LogBoth(String.Format("middle: f({0}, {1}) = {2} ", x_g.x, x_g.y, f_g));
+                LogBoth(String.Format("low: f({0}, {1}) = {2} \n\n", x_l.x, x_l.y, f_l));
 
                 var x_c = new vec2( // center
                     (x_g.x + x_l.x)/2,
@@ -112,11 +112,11 @@ namespace task2_downhill_simplex // Метод деформированного 
                     if (f_e < f_r) {
                         // растягиваем
                         x_h = x_e;
-                        Console.WriteLine("Растяжение");
+                        LogBoth(String.Format("Растяжение"));
                     }else {
                         // переместились слишком далеко
                         x_h = x_r;
-                        Console.WriteLine("Too far");
+                        LogBoth(String.Format("Too far"));
                     }
                 }else if(f_r > f_l && f_r < f_g){
                     // отраженная точка между минимальной и средней
@@ -141,7 +141,7 @@ namespace task2_downhill_simplex // Метод деформированного 
                     );
 
                     var f_s = f(x_s);
-                    Console.WriteLine("Сжатие");
+                    LogBoth(String.Format("Сжатие"));
 
                     if(f_s < f_h){
                         x_h = x_s;
@@ -149,7 +149,7 @@ namespace task2_downhill_simplex // Метод деформированного 
                         // первоначальные точки оказались самыми удачными
                         // делаем глобальное сжатие симплекса
 
-                        Console.WriteLine("Глобальное сжатие");
+                       LogBoth(String.Format("Глобальное сжатие"));
                         x_g.x = x_l.x + (x_g.x - x_l.x) / 2;
                         x_g.y = x_l.y + (x_g.y - x_l.y) / 2;
 
@@ -239,15 +239,15 @@ namespace task2_downhill_simplex // Метод деформированного 
 
                 LogBoth("START Rosenbrock");
                 var rsnbrck_min = inst.getMin(f1, range, eps);
-                Console.WriteLine("Found Rosenbrock min: f({0}, {1}) = {2}", rsnbrck_min.x, rsnbrck_min.y, f1(rsnbrck_min));
+                LogBoth(String.Format("Found Rosenbrock min: f({0}, {1}) = {2}", rsnbrck_min.x, rsnbrck_min.y, f1(rsnbrck_min)));
 
                 LogBoth("START Himmelblau");
                 var hmmlbl_min = inst.getMin(f2, range, eps);
-                Console.WriteLine("Found Himmelblau min: f({0}, {1}) = {2}", hmmlbl_min.x, hmmlbl_min.y, f2(hmmlbl_min));
+                LogBoth(String.Format("Found Himmelblau min: f({0}, {1}) = {2}", hmmlbl_min.x, hmmlbl_min.y, f2(hmmlbl_min)));
 
                 LogBoth("\n\n\nRESULTS:");
-                Console.WriteLine("Found Rosenbrock min: f({0}, {1}) = {2}", rsnbrck_min.x, rsnbrck_min.y, f1(rsnbrck_min));
-                Console.WriteLine("Found Himmelblau min: f({0}, {1}) = {2}", hmmlbl_min.x, hmmlbl_min.y, f2(hmmlbl_min));
+                LogBoth(String.Format("Found Rosenbrock min: f({0}, {1}) = {2}", rsnbrck_min.x, rsnbrck_min.y, f1(rsnbrck_min)));
+                LogBoth(String.Format("Found Himmelblau min: f({0}, {1}) = {2}", hmmlbl_min.x, hmmlbl_min.y, f2(hmmlbl_min)));
                
 
                 txtMirror.Flush();
