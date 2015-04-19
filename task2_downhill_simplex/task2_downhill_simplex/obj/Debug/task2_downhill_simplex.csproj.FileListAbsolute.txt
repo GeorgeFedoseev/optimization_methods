@@ -1,0 +1,6 @@
+S:\Projects\optimization_methods\task2_downhill_simplex\task2_downhill_simplex\bin\Debug\task2_downhill_simplex.exe.config
+S:\Projects\optimization_methods\task2_downhill_simplex\task2_downhill_simplex\bin\Debug\task2_downhill_simplex.exe
+S:\Projects\optimization_methods\task2_downhill_simplex\task2_downhill_simplex\bin\Debug\task2_downhill_simplex.pdb
+S:\Projects\optimization_methods\task2_downhill_simplex\task2_downhill_simplex\obj\Debug\task2_downhill_simplex.csprojResolveAssemblyReference.cache
+S:\Projects\optimization_methods\task2_downhill_simplex\task2_downhill_simplex\obj\Debug\task2_downhill_simplex.exe
+S:\Projects\optimization_methods\task2_downhill_simplex\task2_downhill_simplex\obj\Debug\task2_downhill_simplex.pdb
