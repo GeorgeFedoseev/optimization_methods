@@ -1,0 +1,16 @@
+Input from_x: 
+0
+Input from_y: 
+0
+Input to_x: 
+1000
+Input to_y: 
+1000
+Input eps: 
+0.0001
+START Rosenbrock
+START Himmelblau
+
+
+
+RESULTS:
