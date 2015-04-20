@@ -1,0 +1,6 @@
+S:\Projects\optimization_methods\task2_gradient_descent\task2_gradient_descent\bin\Debug\task2_gradient_descent.exe.config
+S:\Projects\optimization_methods\task2_gradient_descent\task2_gradient_descent\obj\Debug\task2_gradient_descent.csprojResolveAssemblyReference.cache
+S:\Projects\optimization_methods\task2_gradient_descent\task2_gradient_descent\bin\Debug\task2_gradient_descent.exe
+S:\Projects\optimization_methods\task2_gradient_descent\task2_gradient_descent\bin\Debug\task2_gradient_descent.pdb
+S:\Projects\optimization_methods\task2_gradient_descent\task2_gradient_descent\obj\Debug\task2_gradient_descent.exe
+S:\Projects\optimization_methods\task2_gradient_descent\task2_gradient_descent\obj\Debug\task2_gradient_descent.pdb
