@@ -1,0 +1,6 @@
+S:\Projects\optimization_methods\conjugate_gradients\conjugate_gradients\bin\Debug\conjugate_gradients.exe.config
+S:\Projects\optimization_methods\conjugate_gradients\conjugate_gradients\bin\Debug\conjugate_gradients.exe
+S:\Projects\optimization_methods\conjugate_gradients\conjugate_gradients\bin\Debug\conjugate_gradients.pdb
+S:\Projects\optimization_methods\conjugate_gradients\conjugate_gradients\obj\Debug\conjugate_gradients.csprojResolveAssemblyReference.cache
+S:\Projects\optimization_methods\conjugate_gradients\conjugate_gradients\obj\Debug\conjugate_gradients.exe
+S:\Projects\optimization_methods\conjugate_gradients\conjugate_gradients\obj\Debug\conjugate_gradients.pdb
