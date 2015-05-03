@@ -1,0 +1,6 @@
+S:\Projects\optimization_methods\task2_QuasiNewton\task2_QuasiNewton\bin\Debug\task2_QuasiNewton.exe.config
+S:\Projects\optimization_methods\task2_QuasiNewton\task2_QuasiNewton\bin\Debug\task2_QuasiNewton.exe
+S:\Projects\optimization_methods\task2_QuasiNewton\task2_QuasiNewton\bin\Debug\task2_QuasiNewton.pdb
+S:\Projects\optimization_methods\task2_QuasiNewton\task2_QuasiNewton\obj\Debug\task2_QuasiNewton.csprojResolveAssemblyReference.cache
+S:\Projects\optimization_methods\task2_QuasiNewton\task2_QuasiNewton\obj\Debug\task2_QuasiNewton.exe
+S:\Projects\optimization_methods\task2_QuasiNewton\task2_QuasiNewton\obj\Debug\task2_QuasiNewton.pdb
