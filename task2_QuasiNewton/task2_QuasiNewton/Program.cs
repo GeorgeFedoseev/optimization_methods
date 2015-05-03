@@ -142,9 +142,73 @@ namespace task2_QuasiNewton
             txtMirror = new StreamWriter("output.txt");
             var inst = new Program();
 
-            Console.WriteLine(inst.getMin(f2, Matrix.vec2(0, 0), 0.00000001));
+            bool flag = true;
+            while (flag)
+            {
+                double start_x, start_y, eps;
 
-            Console.ReadKey();
+                LogBoth("Input start_x: ");
+                if (!double.TryParse(Console.ReadLine(), out start_x))
+                {
+                    Console.WriteLine("Wrong input");
+                    continue;
+                }
+                else
+                {
+                    LogFile(start_x.ToString());
+                }
+
+                LogBoth("Input start_y: ");
+                if (!double.TryParse(Console.ReadLine(), out start_y))
+                {
+                    Console.WriteLine("Wrong input");
+                    continue;
+                }
+                else
+                {
+                    LogFile(start_y.ToString());
+                }
+
+
+                LogBoth("Input eps: ");
+                if (!double.TryParse(Console.ReadLine(), out eps))
+                {
+                    Console.WriteLine("Wrong input");
+                    continue;
+                }
+                else
+                {
+                    LogFile(eps.ToString());
+                }
+
+                Matrix startPoint = Matrix.vec2(start_x, start_y);
+
+                LogBoth("START Himmelblau");
+                var hmmlbl_min = inst.getMin(f2, startPoint, eps);
+                LogBoth(String.Format("Found Himmelblau min: f({0}, {1}) = {2}", hmmlbl_min.x, hmmlbl_min.y, f2(hmmlbl_min)));
+
+                Console.WriteLine("Press any key to try with Rosenbrock. Esc - exit");
+                if (Console.ReadKey().KeyChar == 27)
+                {
+                    break;
+                }
+
+                LogBoth("START Rosenbrock");
+                var rsnbrck_min = inst.getMin(f1, startPoint, eps);
+                LogBoth(String.Format("Found Rosenbrock min: f({0}, {1}) = {2}", rsnbrck_min.x, rsnbrck_min.y, f1(rsnbrck_min)));
+
+                LogBoth("\n\n\nRESULTS:");
+                LogBoth(String.Format("Found Rosenbrock min: f({0}, {1}) = {2}", rsnbrck_min.x, rsnbrck_min.y, f1(rsnbrck_min)));
+                LogBoth(String.Format("Found Himmelblau min: f({0}, {1}) = {2}", hmmlbl_min.x, hmmlbl_min.y, f2(hmmlbl_min)));
+
+                txtMirror.Flush();
+
+                Console.WriteLine("File output created 'output.txt'.\nPress to try again. Esc - exit");
+                if (Console.ReadKey().KeyChar == 27)
+                {
+                    break;
+                }
+            }
         }
 
 
