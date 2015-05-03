@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 
 
-namespace task2_QuasiNewton
+namespace task2_QuasiNewton // квазиньютоновский метод
 {
         
 
