@@ -16,9 +16,12 @@ namespace task2_QuasiNewton
             Matrix m1 = new Matrix(new double[,] { { 2, 0 }, { 0, 1 } });
             Matrix m2 = new Matrix(new double[,]{{1, 0}, {0, 1}});
 
-            
-            
-            Console.WriteLine(m1+m2);
+
+            Console.WriteLine((m1));
+            Console.WriteLine((m2));
+            Console.WriteLine((m1*m2));
+
+            Console.WriteLine(Matrix.ones(5));
 
             Console.ReadKey();
         }
