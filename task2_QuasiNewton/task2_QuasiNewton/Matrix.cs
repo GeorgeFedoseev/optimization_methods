@@ -9,7 +9,31 @@ namespace task2_QuasiNewton
     class Matrix
     {
 
-        double[,] data;
+        protected double[,] data;
+
+        public double x
+        {
+            get { return data[0, 0]; }
+            set { data[0, 0] = value; }
+        }
+
+        public double y
+        {
+            get { return data[1, 0]; }
+            set { data[1, 0] = value; }
+        }
+
+        public static Matrix vec2(double _x = 0, double _y = 0){
+            Matrix m = new Matrix(2, 1);
+            m.x = _x;
+            m.y = _y;
+            
+            return m;
+        }
+
+        public Matrix(Matrix m) {
+            data = m.data;
+        }
 
         public Matrix(double[,] arr) {
             if (arr.GetLength(0) < 1 && arr.GetLength(1) < 0) {
@@ -26,15 +50,40 @@ namespace task2_QuasiNewton
             data = new double[n, m];            
         }
 
+        public Matrix(int n)
+        {   
+            if(n < 1){
+                throw new Exception("Matrix cant be null");
+            }
 
-        static public Matrix ones(int n) {
-            Matrix res = new Matrix(n, n);            
-            
+            data = new double[n, n];
+ 
             for (int i = 0; i < n; i++) {
-                res.data[i, i] = 1;
+                data[i, i] = 1;
+            }
+        }
+
+
+        
+
+        static public Matrix operator -(Matrix m1)
+        {            
+
+            Matrix res = new Matrix(m1.getHeight(), m1.getWidth());
+
+            for (int i = 0; i < m1.getHeight(); i++)
+            {
+                for (int j = 0; j < m1.getWidth(); j++)
+                {
+                    res.data[i, j] = -m1.data[i, j];
+                }
             }
 
             return res;
+        }
+
+        static public Matrix operator -(Matrix m1, Matrix m2) {
+            return m1 + (-m2);
         }
         
         static public Matrix operator +(Matrix m1, Matrix m2) {
@@ -86,6 +135,26 @@ namespace task2_QuasiNewton
 
         static public Matrix operator *(double k, Matrix m1) {
             return m1 * k;
+        }
+
+        public Matrix T() {
+            Matrix res = new Matrix(getWidth(), getHeight());
+
+            for (int i = 0; i < res.getHeight(); i++) {
+                for (int j = 0; j < res.getWidth(); j++) {
+                    res.data[i, j] = data[j, i];
+                }
+            }
+
+            return res;
+
+        }
+
+        
+
+
+        public double get(int i, int j){
+            return data[i, j];
         }
 
         public int getHeight(){
