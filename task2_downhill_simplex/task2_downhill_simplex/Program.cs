@@ -258,9 +258,7 @@ namespace task2_downhill_simplex // Метод деформированного 
                 }
             }
 
-            
-
-            Console.ReadKey();
+          
         }
 
         static TextWriter txtMirror;
