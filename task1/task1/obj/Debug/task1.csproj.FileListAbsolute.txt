@@ -4,3 +4,9 @@ S:\Projects\optimization_methods\task1\task1\bin\Debug\task1.pdb
 S:\Projects\optimization_methods\task1\task1\obj\Debug\task1.csprojResolveAssemblyReference.cache
 S:\Projects\optimization_methods\task1\task1\obj\Debug\task1.exe
 S:\Projects\optimization_methods\task1\task1\obj\Debug\task1.pdb
+c:\Users\George\Projects\optimization_methods\task1\task1\bin\Debug\task1.exe.config
+c:\Users\George\Projects\optimization_methods\task1\task1\bin\Debug\task1.exe
+c:\Users\George\Projects\optimization_methods\task1\task1\bin\Debug\task1.pdb
+c:\Users\George\Projects\optimization_methods\task1\task1\obj\Debug\task1.csprojResolveAssemblyReference.cache
+c:\Users\George\Projects\optimization_methods\task1\task1\obj\Debug\task1.exe
+c:\Users\George\Projects\optimization_methods\task1\task1\obj\Debug\task1.pdb

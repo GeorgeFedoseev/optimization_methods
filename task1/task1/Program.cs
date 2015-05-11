@@ -113,11 +113,18 @@ namespace task1
 
 
                 LogBoth("\nRUN:\n");
-                LogBoth(String.Format("DichotomyMinX: {0} ({1} iterations)", dichotomyMinX(from, to, eps, delta), dichotomyIterations));
-                LogBoth(String.Format("DichotomyMinValue: {0}", f(dichotomyMinX(from, to, eps, delta))));
+                LogBoth("\nDICHOTOMY:\n");
+                double minXD =  dichotomyMinX(from, to, eps, delta);
 
-                LogBoth(String.Format("GoldenSectionMinX: {0} ({1} iterations)", goldenSectionMinX(from, to, eps), goldenSectionIterations));
-                LogBoth(String.Format("GoldenSectionMinValue: {0}", f(goldenSectionMinX(from, to, eps))));
+                LogBoth("\n\nGOLDEN SECTION:\n\n");
+                double minXGS = goldenSectionMinX(from, to, eps);
+
+                LogBoth(String.Format("\n\nDichotomyMinX: {0} ({1} iterations)", minXD, dichotomyIterations));
+                LogBoth(String.Format("DichotomyMinValue: {0}", f(minXD)));
+
+                
+                LogBoth(String.Format("GoldenSectionMinX: {0} ({1} iterations)", minXGS, goldenSectionIterations));
+                LogBoth(String.Format("GoldenSectionMinValue: {0}", f(minXGS)));
 
                 txtMirror.Flush();
 
